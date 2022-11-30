@@ -1,0 +1,54 @@
+<div class="wrapper__filter">
+  <h3>Filter my list   <a 
+    class="link__reset-boxes" id="link_reset-boxes">reset all</a></h3>
+  <ul>
+    <li>
+      <em></em>
+      <label>where I live</label>
+      <select class="sel-list" data-type="nation" id="nation" name="nation">
+        <option value="null">--select--</option>
+        {% for nation in nations %}
+        <option value="{{nation}}">{{nation}}</option>
+        {% endfor %}
+      </select>
+    </li>
+    <li>
+      <em></em>
+      <label>ethnicity | heritage</label>
+      <select class="sel-list" data-type="ethnic" id="ethnic" name="ethnic">
+        <option value="null">--select--</option>
+        {% for ethnic in ethnics %}
+        <option value="{{ethnic}}">{{ethnic}}</option>
+        {% endfor %}
+      </select>
+    </li>
+    <li>
+      <em></em>
+      <label>profession</label>
+      <select
+        class="sel-list"
+        data-type="profession"
+        id="profession"
+        name="profession"
+      >
+        <option value="null">--select--</option>
+        {% for profession in professions %}
+        <option value="{{profession}}">{{profession}}</option>
+        {% endfor %}
+      </select>
+    </li>
+    <li>
+      <em></em>
+      <label>gender</label>
+      <select class="sel-list" data-type="gender" id="gender" name="gender">
+        <option value="null">--select--</option>
+        <option value="male">male</option>
+        <option value="female">female</option>
+        <option value="other">other</option>
+      </select>
+    </li>
+ 
+  </ul>
+</div>
+
+{% load static %}

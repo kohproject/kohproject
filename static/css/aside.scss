@@ -1,0 +1,312 @@
+$loginBlue: #439fde;
+$end: #6cd1fd;
+
+a.link__reset-boxes {
+  pointer-events: auto !important;
+  font-size: 16px;
+  padding: 0px;
+  margin-left: 50px;
+  color: #0390cd;
+  text-decoration: underline;
+  z-index: 99999999;
+  display: none;
+  position: relative;
+  &:hover{
+    cursor:pointer;
+  }
+  &:after{
+    content: "";
+    display: block;
+    width: 86px;
+    height: 24px;
+    opacity: 0.3;
+    background-color: #fff;
+    border-radius: 3px;
+    position: absolute;
+    top: -1px;
+    left: -14px;
+  }
+  &:before{
+    content:'|';
+    position: absolute;
+    left:-30px;
+  }
+
+  &:hover{
+    text-decoration: underline
+  }
+}
+a.link__reset-boxes.sho {
+  display: inline-block;
+}
+
+aside#aside {
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  z-index: 1;
+  display: block;
+  min-width: 220px;
+  width: calc(calc(100vw / 4) - 30px);
+  height: 386px;
+  border: solid 4px darken($end, 5%);
+
+  // animation-play-state: running;
+  // animation: marchingAnts 0.75s;
+  // animation-timing-function: linear;
+  // animation-iteration-count: infinite;
+  transition: padding 0.3s ease-in, opacity 0.5s ease-in;
+
+  // background-size: 20px 4px, 20px 4px, 4px 20px, 4px 20px;
+  // background-position: 0 0, 0 100%, 0 0, 100% 0;
+  // background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+  // background-image: linear-gradient(
+  //     to right,
+  //     lighten($end, 10%) 25%,
+  //     lighten($end, 5%) 50%
+  //   ),
+  //   linear-gradient(to right, lighten($end, 10%) 25%, lighten($end, 5%) 50%),
+  //   linear-gradient(to bottom, lighten($end, 10%) 25%, lighten($end, 5%) 50%),
+  //   linear-gradient(to bottom, lighten($end, 10%) 25%, lighten($end, 5%) 50%);
+  * {
+    z-index: 999999;
+  }
+
+  &:before {
+    content: "";
+    z-index: -1;
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+
+  .aside__inner {
+    padding-left: 25px;
+    padding-top: 75px;
+    background-color: lighten($end, 15%);
+    background-image: url(../imgs/asideIconbg.svg);
+    background-repeat: no-repeat;
+    background-position: 95% 10px;
+    background-size: 65px 65px;
+  }
+  .aside__outer {
+    background-color: $loginBlue;
+    background: linear-gradient($loginBlue, #3f96d4);
+    > fieldset {
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      position: absolute;
+      padding: 0px 20px;
+      display: block;
+      border: none;
+      pointer-events: auto;
+      top: -2px;
+      left: -2px;
+      z-index: 9999999;
+
+      a.link__close-login{
+        width:36px;
+        height:36px;
+        position: absolute;
+        top:15px;right:20px;
+        
+        display: block;
+        &:before,&:after{
+          position:absolute;
+          width:32px;height:5px;
+          left:10px;
+          display:block;
+          content:'';
+          transform:rotate(44deg);
+          background:#fff;
+          top:10px;
+        }
+        &:after{
+          transform:rotate(-44deg);
+        }
+      }
+      h3 {
+        color: #fff;
+        font-size: 36px;
+        margin:20px 0px;
+      }
+      ul {
+        position: relative;
+        > li {
+          color: #fff;
+          margin-bottom: 15px;
+          label {
+            display: block;
+            padding-bottom: 3px;
+            font-size: 100%;
+            letter-spacing: .02em;
+          }
+          select,
+          input[type="text"] {
+            width: 96%;
+            height: 40px;
+            border: none;
+          }
+
+          $btnBlue:#005ea5;
+
+          select#username{
+            >option:nth-child(1){
+              text-align: center;
+            }
+          }
+
+          button.btn__submit {
+            background: linear-gradient(to bottom,lighten( $btnBlue,1%), $btnBlue);
+            height: 50px;
+            font-size: 18px;
+            color: #fff;
+            width: 96%;
+            text-shadow: 0px 1px 1px lighten( $btnBlue,3%);
+            margin: auto;
+            margin-top: 20px;
+            border: 0px;
+            border-radius: 4px;
+            &:Hover{
+              cursor:pointer;
+              filter:brightness(1.1)
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .flipper {
+    position: absolute;
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    perspective: 1200px;
+    transform: rotateY(-180deg);
+    background-color: $end;
+    transition: transform 0.3s ease-in-out;
+    background-color: lighten($end, 15%);
+
+    .flip {
+      backface-visibility: hidden;
+      position: absolute;
+      background-color: lighten($end, 15%);
+      height: 100%;
+      width: 100%;
+
+      transform-style: preserve-3d;
+      transform: rotateY(-180deg);
+    }
+
+    .flip.aside__outer {
+      transform: rotateY(0deg);
+      color: darken($end, 30%);
+    }
+  }
+
+  .wrapper__filter {
+    h3 {
+      margin: 0px;
+      font: normal 14px arial, helvetica, sans-serif;
+      display: inline-block;
+      /*==new ==*/
+      color: #0390cd;
+      margin-bottom: 10px;
+      position: relative;
+      padding: 0px 12px 2px 0px;
+      z-index: 1;
+   
+    }
+    > ul {
+      > li {
+        display: block;
+        label {
+          clear: both;
+          overflow: hidden;
+          display: block;
+          padding-top: 8px;
+          max-width: 150px;
+          height: 30px;
+          position: relative;
+          font: normal 15px verdana;
+          color: #026d9b;
+          color: #0390cd;
+        }
+        select {
+          clear: both;
+          overflow: hidden;
+          position: relative;
+          display: block;
+          background: #fff;
+          transition: all 0.0001s ease;
+        }
+      }
+      > li.liActive {
+        position: relative;
+        em {
+          position: absolute;
+          box-sizing: border-box;
+          left: -4px;
+          top: 34px;
+          width: 25px;
+          height: 25px;
+          border-radius: 25px;
+          display: block;
+          background-color: #1bc86d;
+          animation-name: successAnim;
+          animation-duration: 0.2s;
+          animation-iteration-count: 1;
+          &:before,
+          &:after {
+            content: "";
+            position: absolute;
+            box-sizing: border-box;
+            background: #fff;
+            width: 13px;
+            height: 3px;
+            top: 11px;
+            left: 8px;
+            display: block;
+            transform: rotate(-46deg);
+          }
+          &:before {
+            width: 5px;
+            top: 12px;
+            left: 6px;
+            transform: rotate(46deg);
+          }
+        }
+        > label {
+          padding-left: 32px;
+        }
+        > select {
+          width: calc(90% - 30px);
+          margin-left: 30px;
+        }
+      }
+    }
+  }
+  h2 {
+    position: absolute;
+    top: 5px;
+    left: 0px;
+    display: block;
+    margin: 0px;
+    padding-left: 20px;
+    color: #fff;
+    color: darken($end, 30%);
+    font-size: 36px;
+  }
+}
+
+#body.login #aside {
+  border: solid 1px lighten($loginBlue, 1%);
+  border-bottom: solid 2px lighten($loginBlue, 5%);
+  .flipper {
+    transform: rotateY(0deg) !important;
+  }
+}

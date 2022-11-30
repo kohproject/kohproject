@@ -1,0 +1,32 @@
+{% load static %}
+<fieldset>
+    <form id="form_login" action="POST">
+    <div>
+        <h3>Login</h3>
+        <ul>
+            <li>
+                <label>username</label>
+                <select name="username" id="username">
+                    
+                    <option value=null> --select-- </option>
+                    {% for koh in kohs %}
+                    <option value="{{koh.url}}">{{koh.url}}</option>
+                    {% endfor %}
+                
+                </select>
+            </li>
+            <li>
+                <label>password</label>
+                <input type="text" name="password" value="skAdmin" id="password" placeholder="*********"/>
+            </li>
+            <li>
+                <button id="btn_password-submit" class="btn__submit">submit</button>
+                
+            </li>
+        </ul>
+    </div>
+</form>
+<a class="link__close-login login-toggle"></a>
+</fieldset>
+
+<script type="text/javascript" src="{% static 'js/login.js' %}"></script>

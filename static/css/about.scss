@@ -1,0 +1,216 @@
+#sectAbout,
+#sectContact{
+    overflow: hidden;
+    position: relative; 
+}
+
+.contact__wrapper,
+.about__wrapper{
+    min-height:100vh;
+    border-top:solid 10px green;
+    *{
+        z-index:999999;
+    }
+    padding-top:100px;
+    h2{
+        color:#fff;
+        max-width:440px;
+        font-size:50px;
+        margin:20px auto 0px auto;
+    }
+}
+
+.about__wrapper{
+    width:0px;
+    overflow:hidden;
+    >div.inner{
+        max-width:440px;
+        padding:0px 0px 100px 0px;
+        margin:auto;
+        p{
+            color:#fff;
+        }
+    }
+}
+
+/* ======== CONTACT ============ */
+$start: #dc1038;
+$button:#0389c3;
+
+.contact__wrapper{
+    z-index: 2;
+    h2{
+        color:#fff;
+        max-width:440px;
+        font-size:50px;
+        margin:20px auto 0px auto;
+    }
+   .contact-response{
+        height:0px;
+        background:lighten($start,10%);
+        width:100%;
+        max-width:440px;
+        position:relative;
+        margin:20px auto;
+        overflow:hidden;
+        >div{
+            position: absolute;
+            height:100px;width:100%;
+            padding:10px 20px;
+            transform:translateY(-100px);
+
+            &:after{
+                content: "\263A";
+                color: #fff;
+                font-size: 54px;
+                position: absolute;
+                top: -10px;
+                right: 10px;
+                opacity: .6;
+            }  
+            h3{
+                font-size:24px;font-weight: normal;
+                margin:0px;
+            }
+            p{
+                font-size:20px;
+            }
+        }
+    }
+}
+.contact__wrapper.success{
+    .contact-response{
+        transition:all .3s ease;
+        height:100px;border:dashed 2px #ff0000;
+        >div{
+            transform:translateY(0px);
+            transition:all .3s ease;
+        }
+    }
+}
+.contact__wrapper{
+   .contact-response{
+        height:0px;
+        background:lighten($start,10%);
+        width:100%;
+        max-width:440px;
+        position:relative;
+        margin:0px auto;
+        overflow:hidden;
+        >div{
+            position: absolute;
+            height:100px;width:100%;
+            padding:10px 20px;
+            transform:translateY(-100px);
+
+            &:after{
+                content: "\263A";
+                color: #fff;
+                font-size: 54px;
+                position: absolute;
+                top: -10px;
+                right: 10px;
+                opacity: .6;
+            }   
+        
+
+            h3{
+                font-size:24px;font-weight: normal;
+                margin:0px;
+            }
+            p{
+                font-size:20px;
+            }
+        }
+    }
+  
+    
+    form{
+        max-width:440px;
+        position: relative;
+        margin:10px auto;
+        box-sizing: border-box;
+       font-family:verdana;
+    
+        *{
+            box-sizing: border-box;
+        }
+       
+        input,label, textarea{
+            display:block;
+            width:100%;
+            max-width:440px;
+            padding-left:4px;
+          
+        }
+        input, textarea{
+            border:0px;
+            outline:none;
+        }
+        textarea{
+            max-height:150px;
+        }
+        label{
+            margin:10px 0px 3px 0px;
+          color:#fff;
+            opacity:.9;
+        }
+      label.before-required-star{
+            position: relative;
+            &:before{
+                content:'*';
+                color:#ff0000;
+                font-size:16px;
+                position:absolute;
+                left:-10px;
+                top:0px;
+            }
+        }
+        input{
+            height:35px;
+        }
+        li.err,li.err.err-email,li.err-email{
+            input.inp-req,textarea.inp-req{
+                background:#f8b4c6;
+                outline:solid 2px #cc0000;
+              }
+            label{
+                position: relative;
+                &:after{
+                    content:'required!';
+                    position: absolute;
+                    right:0px;text-align:right;
+                    bottom:0px;
+                    color:#fff;
+                    font:normal 10pt arial;
+                }
+            }
+        }
+       
+        li.err-email{
+            label{
+                &:after{
+                    content:'invalid email!';
+                }
+            }
+          }
+        button{
+            height:55px;
+            width:80%;
+            border:none;
+            border-radius:30px;
+            font-size:20px;
+            margin:30px auto;
+            color:#fff;
+            text-shadow:1px 1px 1px lighten(
+                $button,20%);
+                box-shadow:1px 1px 20px darken($button,5%);
+            background:linear-gradient(to bottom, lighten($button,5%),$button);
+            &:hover{
+                transform: scale(1.02);
+               
+                cursor: pointer;
+            }
+        }
+    }
+}

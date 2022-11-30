@@ -1,0 +1,41 @@
+@media only screen and (max-width: 1079px) {
+  body nav {
+    z-index: 9999;
+  }
+  body .contain {
+    z-index: 999;
+  }
+  body .contain main {
+    position: relative;
+  }
+  body .contain aside {
+    position: fixed;
+    display: block;
+    top: -600px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100vw - 40px);
+    z-index: 999999;
+  }
+  body .contain main div.floater {
+    width: calc(50vw - 40px);
+    min-width: calc(50vw - 40px);
+  }
+  body .contain main ul.flex.flex-wrap > li div.box.box-grid,
+body .contain main ul.flex.flex-wrap > li div.box-koh.box {
+    width: calc(50vw - 40px);
+  }
+  body .contain main ul.flex.flex-wrap > li div.box-koh.box.blank {
+    display: none;
+  }
+}
+@media only screen and (max-width: 600px) {
+  body .contain main ul.flex.flex-wrap > li div.floater,
+body .contain main ul.flex.flex-wrap > li div.box.box-grid,
+body .contain main ul.flex.flex-wrap > li div.box-koh.box {
+    width: calc(100vw - 40px);
+  }
+  body .contain main ul.flex.flex-wrap > li div.box-koh.box.blank {
+    display: none;
+  }
+}/*# sourceMappingURL=mobile.css.map */

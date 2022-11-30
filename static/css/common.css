@@ -1,0 +1,202 @@
+body {
+  margin: 0px;
+}
+
+body * {
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.cl {
+  clear: both;
+}
+
+.over {
+  overflow: hidden;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+ul, ol,
+ul > li,
+ol > li {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+.wide10 {
+  width: 9.99%;
+}
+
+.wide20 {
+  width: 19.99%;
+}
+
+.wide30 {
+  width: 29.99%;
+}
+
+.wide40 {
+  width: 39.99%;
+}
+
+.wide50 {
+  width: 49.99%;
+}
+
+.wide60 {
+  width: 59.99%;
+}
+
+.wide70 {
+  width: 69.99%;
+}
+
+.wide80 {
+  width: 79.99%;
+}
+
+.wide90 {
+  width: 89.99%;
+}
+
+.wide100 {
+  width: 100%;
+}
+
+/* flex start */
+ul, ol,
+.flex {
+  display: flex;
+}
+
+ul,
+.flex.col {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+ul > li.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+ol {
+  flex-direction: row;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.mt30 {
+  margin-top: 30px;
+}
+
+.mt40 {
+  margin-top: 40px;
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.mb30 {
+  margin-bottom: 30px;
+}
+
+.mb40 {
+  margin-bottom: 40px;
+}
+
+.pt10 {
+  padding-top: 10px;
+}
+
+.pt20 {
+  padding-top: 20px;
+}
+
+.pt30 {
+  padding-top: 30px;
+}
+
+.pt40 {
+  padding-top: 40px;
+}
+
+.pb10 {
+  padding-bottom: 10px;
+}
+
+.pb20 {
+  padding-bottom: 20px;
+}
+
+.pb30 {
+  padding-bottom: 30px;
+}
+
+.pb40 {
+  padding-bottom: 40px;
+}
+
+.fx1 {
+  flex: 1;
+}
+
+.fx2 {
+  flex: 2;
+}
+
+.fx3 {
+  flex: 3;
+}
+
+.fx4 {
+  flex: 4;
+}
+
+.flex.center,
+.flex.col.center {
+  justify-content: center;
+  justify-items: center;
+}
+
+.flexaround {
+  justify-content: space-around;
+}
+
+.flexbetween {
+  justify-content: space-between;
+}
+
+.flexwrap {
+  flex-wrap: wrap;
+}
+
+/* flex end *//*# sourceMappingURL=common.css.map */

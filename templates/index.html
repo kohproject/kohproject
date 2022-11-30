@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% block start %}
+{% load static %}
+<div class="container" id="container">
+    <div class="contain contain1">
+        <form method="post" id="form_modal">
+            {% csrf_token %}
+            <main id="main"></main>
+        </form>
+    </div>
+    <div class="contain contain0">
+        <main>
+             <ul class="flex flex-wrap">
+                 <li><div class="box box-spacer"></div></li>
+                 <li><div class="box box-spacer"></div></li>
+                 <li><div class="box box-spacer"></div></li>
+                 <li><div class="box box-spacer"></div></li>
+                 <li><div class="box box-spacer"></div></li>
+                 <li><div class="box box-spacer"></div></li>
+                 <li><div class="box box-spacer"></div></li>
+                 <li>{% include 'partials/aside.html' %}</li>
+             </ul>
+        </main>
+    </div>
+    <div class="contain contain2 grid" id="contain2">
+        <main class="main2" id="main2"></main>
+    </div>
+
+</div>
+{% include 'partials/floater.html' %}
+{% include 'partials/modalContact.html' %}
+
+
+
+    <script type="text/javascript" src="{% static 'js/vendor/mustache.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/common.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/boxmodal.js' %}"></script>
+   
+    <script type="text/javascript" src="{% static 'js/loadKohs.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/filterFunctionality.js' %}"></script>
+
+
+{% endblock %}

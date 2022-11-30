@@ -1,0 +1,70 @@
+<div class="modal__full-wrapper" id="modal">
+    <div class="modal-contact-content modal-about-content">
+        <div class="wrapper__contact" id="contactWrapper">
+            <h2>say hello</h2>
+            <div id="response" class="contact-response">
+              <div>
+                <h3>Thank You.</h3>
+                <p>Your message has been sent...</p>
+              </div>
+            </div>
+            <form id="form_contact">
+              <ul>
+                <li class="li__req">
+                  <label class="before-required-star" for="name">Name<span class="sp__error-mess"></span></label>
+                  <input type="text" class="inp__txt inp-req" id="name" name="name" required="">
+                </li>
+                <li class="li__req">
+                  <label class="before-required-star" for="email">Email<span class="sp__error-mess"></span></label>
+                  <input type="text" class="inp__txt inp-req" id="email" name="email" required="">
+                </li>
+                <li class="li__req">
+                  <label class="before-required-star" for="subject">Subject<span class="sp__error-mess"></span></label>
+                  <input type="text" class="inp__txt inp-req" id="subject" name="subject" required="">
+                </li>
+                <li class="li__req">
+                  <label class="before-required-star" for="message">Message<span class="sp__error-mess"></span></label>
+                  <textarea name="message" class="textarea__mess inp-req" id="message" cols="30" rows="10" required=""></textarea>
+                </li>
+                <li>
+                  <div class="wrapper__btn margintop10 wide100 centered">
+                    <button id="btn_submit" class="base__btn btn-red btn-med-large wide80 centered">
+                      Submit
+                    </button>
+                  </div>
+                </li>
+              </ul>
+            </form>
+            <a onclick="common.showPage()" class="link__close" id="link_close"></a>
+        </div>
+        <div class="wrapper__about" id="aboutWrapper">
+           
+            <div class="inner">
+              <h2>About</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in
+                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in
+                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+            <a onclick="common.showPage()" class="link__close" id="link_close"></a>
+        </div>
+       
+    </div>
+</div>
+
+
+<script src="/static/js/validate.js"></script>

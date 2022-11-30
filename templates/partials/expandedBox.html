@@ -1,0 +1,33 @@
+<div class="block__title">
+          <h2>{{koh.name}}</h2>
+          <p><a href="{{koh.url}}">{{koh.url}}</a></p>
+          <ol class="list__social">
+              <li><a href="#" class="icon__social social-facebook"></a></li>
+              <li><a href="#" class="icon__social social-instagram"></a></li>
+              <li><a href="#" class="icon__social social-twitter"></a></li>
+          </ol>
+          <em class="head"></em>
+      </div>
+      <div class="block__content">
+          <ol><li><a href="#" class="active" 
+              onclick="javascript:setBlockContent('box_grid-1','profile')">profile</a></li>
+              <li><a href="#" onclick="javascript:setBlockContent('box_grid-1','notes')">notes</a></li></ol>
+          <div class="wrap__content-profile">
+              <ul>
+                  <li class="li__prof"><em class="em__prof-"{{koh.profession}}></em>
+                      <dt>Profession:</dt>
+                      <dd>{{koh.profession}}</dd>
+                  </li>
+                  <li class="li__ethn"><em></em>
+                      <dt>My Ethnicity:</dt>
+                      <dd>{{koh.ethnic}}</dd>
+                  </li>
+                  <li class="li__resid"><em></em>
+                      <dt>My Residence:</dt>
+                      <dd>{{koh.nation}}</dd>
+                  </li>
+              </ul>
+          </div>
+          <div class="wrap__content-notes">notes</div>
+      </div>
+      <a href="#" onclick="javascript:closeWind()" class="link__close-win"></a>

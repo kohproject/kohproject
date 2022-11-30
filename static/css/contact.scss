@@ -1,0 +1,329 @@
+$blueNav: #0389c3;
+$start: #d18cba;
+$end: #6cd1fd;
+$start: #dc1038;
+$button: #0389c3;
+.wrapper__contact {
+  .contact-response {
+    height: 0px;
+    background: lighten($start, 10%);
+    width: 100%;
+    max-width: 440px;
+    position: relative;
+    margin: 0px auto;
+    overflow: hidden;
+    > div {
+      position: absolute;
+      height: 100px;
+      width: 100%;
+      padding: 10px 20px;
+      transform: translateY(-100px);
+
+      &:after {
+        content: "\263A";
+        color: #fff;
+        font-size: 54px;
+        position: absolute;
+        top: -10px;
+        right: 10px;
+        opacity: 0.6;
+      }
+
+      h3 {
+        font-size: 24px;
+        font-weight: normal;
+        margin: 0px;
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+
+  form {
+    max-width: 440px;
+    position: relative;
+    margin: 10px auto;
+    box-sizing: border-box;
+    font-family: verdana;
+
+    * {
+      box-sizing: border-box;
+    }
+    .li__req {
+      margin-bottom: 4px;
+    }
+    input,
+    label,
+    textarea {
+      display: block;
+      width: 100%;
+      max-width: 440px;
+      padding-left: 4px;
+    }
+    input,
+    textarea {
+      border: 0px;
+      outline: none;
+    }
+    textarea {
+      max-height: 150px;
+    }
+    label {
+      margin: 10px 0px 3px 0px;
+      color: #fff;
+      opacity: 0.9;
+    }
+    label.before-required-star {
+      position: relative;
+      &:before {
+        content: "*";
+        color: #ff0000;
+        font-size: 16px;
+        position: absolute;
+        left: -10px;
+        top: 0px;
+      }
+    }
+    input {
+      height: 35px;
+    }
+    li.err,
+    li.err.err-email,
+    li.err-email {
+      input.inp-req,
+      textarea.inp-req {
+        background: #f8b4c6;
+        outline: solid 2px #cc0000;
+      }
+      label {
+        position: relative;
+        &:after {
+          content: "required!";
+          position: absolute;
+          right: 0px;
+          text-align: right;
+          bottom: 0px;
+          color: #fff;
+          font: normal 10pt arial;
+        }
+      }
+    }
+
+    li.err-email {
+      label {
+        &:after {
+          content: "invalid email!";
+        }
+      }
+    }
+    button {
+      height: 55px;
+      width: 80%;
+      border: none;
+      border-radius: 30px;
+      font-size: 20px;
+      margin: 30px auto;
+      color: #fff;
+      text-shadow: 1px 1px 1px lighten($button, 20%);
+      box-shadow: 1px 1px 20px #222;
+      background: linear-gradient(to bottom, lighten($button, 5%), $button);
+      &:hover {
+        transform: scale(1.02);
+        filter: brightness(1.1);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.wrapper__about,
+.wrapper__contact {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  max-width: 440px;
+  margin: auto;
+  padding-top: 20px;
+  transform: translateY(-200%);
+  transition: transform 1s ease;
+
+  h2 {
+    color: #fff;
+    width: 440px;
+    font-size: 60px;
+    padding: 20px 0px 0px 0px;
+    margin: auto;
+  }
+  .link__close {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: solid 5px #ccc;
+    border-radius: 60px;
+    position: absolute;
+    opacity: 0.8;
+    top: 6%;
+    right: -5%;
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+      transform: scale(1.05);
+      transition: all 0.1s ease;
+    }
+    &:before,
+    &:after {
+      content: "";
+      width: 28px;
+      height: 5px;
+      background: #ddd;
+      display: block;
+      position: absolute;
+      transform: rotate(44deg);
+      top:17px;;
+      left: 6px;
+    }
+    &:after {
+      transform: rotate(-44deg);
+    }
+    
+  }
+}
+.wrapper__about {
+  width: 0px;
+  min-width: 200px;
+  transition: width 0.2s ease-in;
+  h2{
+    color: #999;
+    margin: 0px;
+    margin-left:15%;
+  }
+  p{
+    line-height:200%
+  }
+ 
+}
+
+
+.modal__full-wrapper {
+  position: fixed;
+  opacity: 0;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  overflow: hidden;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  background: none;
+  width: 100vw;
+
+  max-width: 100vw;
+  z-index: 99999;
+  height: 0px;
+  .modal-about-content,
+  .modal-contact-content {
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+    height: 100%;
+    transition: opacity 0.4s ease;
+    &:before {
+      content: "";
+      background: #222;
+      display: block;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      opacity: 0;
+      position: absolute;
+      z-index: -1;
+      transform: opacity 0.4s ease;
+    }
+  }
+}
+
+body.contact {
+  overflow-y: hidden;
+  .modal__full-wrapper {
+    opacity: 1;
+    height: 100vh;
+    display: block;
+    z-index: 9999999;
+    transform: translate(-50%, 0%);
+    transition: opacity 0.3s ease;
+    .modal-contact-content {
+      height: 100vh;
+      opacity: 1;
+      &:before {
+        opacity: 0.9;
+        transition: opacity 0.5s ease;
+      }
+      div,
+      form {
+        display: block;
+      }
+      .wrapper__about {visibility:hidden}
+      .wrapper__contact {
+        position: relative;
+        transform: translateY(10%);
+        transition: transform 0.3s ease-in;
+      }
+    }
+  }
+  .wrapper__contact.success {
+    .contact-response {
+      transition: all 0.3s ease;
+      height: 100px;
+      border: dashed 2px #ff0000;
+      > div {
+        transform: translateY(0px);
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}
+
+body.about {
+  overflow-y: hidden;
+  .modal__full-wrapper {
+    opacity: 1;
+    height: 100vh;
+    display: block;
+    z-index: 9999999;
+    transform: translate(-50%, 0%);
+    transition: opacity 0.3s ease;
+    .modal-about-content {
+      height: 100vh;
+      opacity: 1;
+      &:before {
+        opacity: 0.9;
+        transition: opacity 0.5s ease;
+      }
+      .wrapper__contact{visibility:hidden}
+      .wrapper__about {
+        height: 90vh;
+        width: 100%;
+        max-width: 640px;
+        margin-top: -5vh;
+        transform: translateY(-100%);
+        background: #fff;
+        padding: 0px 40px;
+        transition: transform 0.3s ease-in, width 0.4s ease-in;
+      }
+      .wrapper__about {
+        outline:solid 20px #fff;
+        border:solid 1px #ddd;
+        background-color: #fff;
+        background-image: url(../imgs/kohprojecticon.svg);
+        background-repeat: no-repeat;
+        background-position: 5% 2%;
+        background-size: 75px 75px;
+        a.link__close{
+          top: 2.5%;
+          right: 3%;
+        }
+      }
+    }
+  }
+}

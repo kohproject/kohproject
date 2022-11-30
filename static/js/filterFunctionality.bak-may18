@@ -1,0 +1,91 @@
+ let filteredListArr = [];
+  const selectfilters = document.querySelectorAll(".sel-list");
+  const checkDropVal = (sel) => {
+    let $li = sel.closest("li");
+    $li.className = "";
+    if (sel.value !== "null") $li.className = "liActive";
+    return true;
+  };
+
+  const setFilterOptions = () => {
+    let filterArr = [];
+    selectfilters.forEach((sel) => {
+      if (sel.value !== "null") {
+        filterArr.push({
+          type: sel.dataset.type,
+           val: sel.value
+        });
+      }
+    });
+   setFilterFunct(filterArr);
+  };
+
+  const setBoxScroll = (box, index) => {
+    body.classList.add("floatActive");
+
+    window.scrollTo({
+      top: common.currPosition(box).top,
+      behavior: "smooth",
+    });
+    return true;
+  };
+  
+  let kohs =[];
+  let filteredRemainer  =[];
+  let filterlen =0;
+
+  const setFilterFunct = (filterArr) => {
+    filteredListArr = [];
+    kohs = allkohs.slice(0);
+    fcount = filterArr.length;
+
+    kohs.forEach((koh) =>{
+      let dropCount = 0;
+      filterArr.forEach((drop) =>{
+        if(koh[drop.type] !== undefined && 
+           koh[drop.type].toLowerCase() === drop.val.toLowerCase()){
+          dropCount++;
+        }
+      });
+      if(dropCount === parseInt(fcount)){
+        filteredListArr.push(koh)
+      };
+    });
+
+    let filteredRemainer = allkohs.slice(0).filter(function(itm) {
+      return filteredListArr.indexOf(itm) == -1;
+    });
+   
+    if(fcount === 0) {
+      common.displayBoxHtml(allkohs,fcount);
+      return;
+    }
+    filterlen = filteredListArr.length;
+    filteredListArr = filteredListArr.concat(filteredRemainer);
+    common.displayBoxHtml(filteredListArr,filterlen);
+    return;
+  };
+
+  (function () {
+    
+    let $promise = new Promise((res, rej) => {
+      let $int = setInterval(function () {
+        if (container.classList.contains("ready")) {
+          clearInterval($int);
+          res(true);
+        }
+      }, 100);
+    });
+
+    $promise.then(function (res) {
+      if (res) {
+        //* bind the dropdown change event *//
+        selectfilters.forEach((sel) => {
+          sel.addEventListener("change", () => {
+            if (checkDropVal(sel)) setFilterOptions();
+          });
+        });
+      }
+    });
+  }());
+

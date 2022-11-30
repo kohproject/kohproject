@@ -1,0 +1,312 @@
+@-webkit-keyframes flip1 {
+  100% {
+    transform: rotateX(-180deg);
+  }
+}
+@keyframes flip1 {
+  100% {
+    transform: rotateX(-180deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    transform: rotate(300deg);
+  }
+}
+@keyframes spin {
+  100% {
+    transform: rotate(300deg);
+  }
+}
+@-webkit-keyframes spin2 {
+  100% {
+    transform: rotate(-300deg);
+  }
+}
+@keyframes spin2 {
+  100% {
+    transform: rotate(-300deg);
+  }
+}
+.box.box-grid {
+  position: relative;
+  height: 118px;
+  padding: 0px !important;
+  overflow: hidden !important;
+  background: transparent;
+  visibility: hidden;
+  transition: height 0.2s ease;
+}
+.box.box-grid * {
+  visibility: hidden;
+}
+.box.box-grid div {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+.box.box-grid a.link__blank {
+  display: block;
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  top: 60px;
+  left: 0px;
+  opacity: 0;
+  display: none;
+}
+.box.box-grid .flipper-second {
+  top: 0px;
+  height: 268px;
+  width: 100%;
+  transform-origin: top;
+  background: #fff;
+  perspective: 1500px;
+  transform: rotateX(-180deg);
+}
+.box.box-grid .full-flipper {
+  position: relative;
+  height: 118px;
+  perspective: 200px;
+  transform: rotateX(0deg);
+  transition: transform 0.2s ease;
+  width: 100%;
+  z-index: 0;
+}
+.box.box-grid .full-flipper .box-grid-inner {
+  background-color: #252809;
+  background-color: white;
+  border: solid 4px #0390cd;
+  height: 118px;
+  width: 100%;
+  color: #fff;
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  transform: rotateX(0deg);
+  transform-origin: bottom;
+  transition: transform 0.2s ease-in;
+}
+.box.box-grid .full-flipper .box-grid-inner h5,
+.box.box-grid .full-flipper .box-grid-inner p {
+  position: absolute;
+  top: 12px;
+  left: 24px;
+  margin: 0px;
+  color: rgb(239, 255, 10);
+}
+.box.box-grid .full-flipper .box-grid-inner h5 {
+  font-size: 30px;
+}
+.box.box-grid .full-flipper .box-grid-inner p {
+  bottom: 12px;
+  left: 24px;
+  top: auto;
+}
+.box.box-grid .full-flipper .flipper {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  perspective: 200px;
+  height: 118px;
+  width: 100%;
+  transform: rotateX(-180deg);
+  z-index: 0;
+  transition: transform 0.3s ease-in-out;
+}
+.box.box-grid .full-flipper .flipper .block__head {
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  background-color: #d1f0fe;
+  transform: rotateX(0deg);
+  transition: transform 0.2s ease-in;
+  top: 118px;
+}
+.box.box-grid .full-flipper .flipper .block__head h4 {
+  position: absolute;
+  left: 120px;
+  top: 12px;
+  font-size: 175%;
+  margin: 0px;
+  color: #0390cd;
+}
+.box.box-grid .full-flipper .flipper .block__head > em {
+  display: block;
+  width: 74px;
+  height: 131px;
+  position: absolute;
+  left: 12px;
+  top: 12px;
+}
+.box.box-grid .full-flipper .flipper .block__head > em:before, .box.box-grid .full-flipper .flipper .block__head > em:after {
+  content: "";
+  position: absolute;
+  display: block;
+  opacity: 0;
+  width: 90px;
+  height: 90px;
+  top: -9px;
+  left: -9px;
+  border-radius: 90px;
+}
+.box.box-grid .full-flipper .flipper .block__head > em:before {
+  border: dashed 1px #6cd1fd;
+}
+.box.box-grid .full-flipper .flipper .block__head > em:after {
+  width: 74px;
+  height: 74px;
+  background: #6cd1fd;
+  background: transparent;
+  border-radius: 74px;
+  overflow: hidden;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+.box.box-grid .full-flipper .flipper .block__head.head-bottom {
+  height: 57px;
+  width: 100%;
+  top: 0px;
+  background: #85d9fd;
+  transform: rotateX(-180deg);
+  perspective: 200px;
+  transform-origin: top;
+  z-index: 99;
+}
+.box.box-grid .full-flipper .flipper .block__head.head-bottom p {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  align-items: center;
+}
+.box.box-grid .full-flipper .flipper .block__head.head-bottom p a {
+  display: flex;
+  background: #6cd1fd;
+  background: #9ee1fe;
+  align-items: center;
+  justify-content: center;
+  height: 57px;
+  width: 100%;
+}
+.box.box-grid .full-flipper .flipper .block__head.head-bottom em {
+  top: -48px;
+}
+
+body.active .box.box-grid {
+  visibility: visible;
+}
+body.active .box.box-grid.active {
+  display: block;
+  height: 386px !important;
+  background-color: white;
+  visibility: visible;
+  transition: height 0.2s ease-in, background-color 0.3s ease-in, transform 0.3s ease;
+}
+body.active .box.box-grid.active * {
+  visibility: visible;
+}
+body.active .box.box-grid.active div {
+  display: block;
+}
+body.active .box.box-grid.active a.link__blank {
+  display: block;
+}
+body.active .box.box-grid.active .flipper-second {
+  transform: rotateX(0deg);
+  transition: all 0.7s ease-in;
+  top: 118px;
+  padding-top: 40px;
+}
+body.active .box.box-grid.active .flipper-second ul.flex {
+  border-top: dashed 1px #eee;
+}
+body.active .box.box-grid.active .flipper-second ul.flex > li {
+  padding-left: 100px;
+  border-bottom: dashed 1px #eee;
+  display: block;
+  position: relative;
+  height: 60px;
+  margin-bottom: 1px;
+}
+body.active .box.box-grid.active .flipper-second ul.flex > li > em {
+  position: absolute;
+  display: block;
+  width: 36px;
+  height: 36px;
+  border-radius: 36px;
+  left: 28px;
+  top: 12px;
+  background: #ddd;
+}
+body.active .box.box-grid.active .flipper-second ul.flex > li > em:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 48px;
+  height: 48px;
+  border-radius: 48px;
+  left: -7px;
+  top: -7px;
+  border: solid 1px #d18cba;
+}
+body.active .box.box-grid.active .flipper-second ul.flex > li dt,
+body.active .box.box-grid.active .flipper-second ul.flex > li dd {
+  margin: 0px;
+  padding-top: 8px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  font-size: 90%;
+}
+body.active .box.box-grid.active .flipper-second ul.flex > li dd {
+  font-size: 140%;
+  padding-top: 4px;
+}
+body.active .box.box-grid.active .full-flipper {
+  transform: rotateX(180deg);
+  perspective: 300px;
+  height: 118px;
+  transition: all 0.4s ease-in;
+  /*==========*/
+}
+body.active .box.box-grid.active .full-flipper .block__head {
+  perspective: 100px;
+  top: 0px;
+}
+body.active .box.box-grid.active .full-flipper .block__head > em:before, body.active .box.box-grid.active .full-flipper .block__head > em:after {
+  opacity: 1;
+  transition: opacity 1s cubic-bezier(0, 1.01, 0, 1.01);
+  transition-delay: 0.4s;
+}
+body.active .box.box-grid.active .full-flipper .block__head.head-top > em:before {
+  border-style: dashed;
+  transform: rotate(0deg);
+  -webkit-animation: spin 1s infinite;
+          animation: spin 1s infinite;
+}
+body.active .box.box-grid.active .full-flipper .block__head.head-bottom {
+  transform: rotateX(0deg);
+  perspective: 400px;
+  transition-delay: 0.5s;
+  top: 60px;
+  transition: transform 0.8s ease-in;
+}
+body.active .box.box-grid.active .full-flipper .block__head.head-bottom em:before, body.active .box.box-grid.active .full-flipper .block__head.head-bottom em:after {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+body.active .box.box-grid.active .full-flipper .block__head.head-bottom em:before {
+  transform: rotate(0deg);
+  -webkit-animation: spin2 1s infinite;
+          animation: spin2 1s infinite;
+  border: dashed 1px #c268a4;
+}
+body.active .box.box-grid.active .full-flipper .block__head.head-bottom em:after {
+  background-color: #b0478d;
+  transition: background-color 0.1s ease;
+  transition-delay: 0.5s;
+}/*# sourceMappingURL=flip.css.map */

@@ -1,0 +1,13 @@
+node_modules/
+dist/
+proto/
+.vscode/
+
+.DS_Store
+
+*.psd
+*.env
+*.csv
+*.log
+*.bak
+*.ai

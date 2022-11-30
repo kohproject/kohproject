@@ -1,0 +1,40 @@
+
+   {% extends 'layout.html' %} {% block start %} {% load static %}
+   <link rel="stylesheet" href="static/css/proto.css" type="text/css"/>
+
+    <div class="box box-koh" data-id="test" data-nation="usa" 
+        data-ethnic="korean" data-gender="male" data-profession="software" 
+        data-counter="10"> 
+        <div class="box-inner"> 
+            <h4>sonny koh</h4> 
+            <p class="txt__url">http://www.sonnykoh.com</p> 
+        </div>
+    </div>
+
+    <div class="box box-grid active" id="box_grid-1" data-counter="1">
+        
+
+
+        <div class="block__grid"></div>
+        <div class="block__grid">
+            <div class="grid__wrap-list">
+                <ul>
+                    <li class="li__prof"><em></em>
+                        <dt>Profession:</dt>
+                        <dd>Photographer</dd>
+                    </li>
+                    <li class="li__ethn"><em></em>
+                        <dt>My Ethnicity:</dt>
+                        <dd>Chinese</dd>
+                    </li>
+                    <li class="li__resid"><em></em>
+                        <dt>My Residence:</dt>
+                        <dd>Singapore</dd>
+                    </li>
+                </ul>
+            </div>
+            <div class="grid__wrap-notes"></div>
+
+        </div>
+    </div>
+    {% endblock %}

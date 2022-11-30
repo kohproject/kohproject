@@ -1,0 +1,124 @@
+{% extends 'layout.html' %} {% block start %} {% load static %}
+<div class="container" id="container">
+  <section id="sectAbout">
+    <div class="about__wrapper" id="aboutWrapper">
+      <h2>{{title1}}</h2>
+      <div class="inner">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!----- =========== CONTACT ============== ---->
+  <section id="sectContact">
+    <div class="contact__wrapper" id="contactWrapper">
+      <h2>{{title2}}</h2>
+      <div id="response" class="contact-response">
+        <div>
+          <h3>Thank You.</h3>
+          <p>Your message has been sent...</p>
+        </div>
+      </div>
+      <form id="form_contact">
+        <ul>
+          <li class="li__req">
+            <label class="before-required-star" for="name"
+              >Name<span class="sp__error-mess"></span
+            ></label>
+            <input
+              type="text"
+              class="inp__txt inp-req"
+              id="name"
+              name="name"
+              required
+            />
+          </li>
+          <li class="li__req">
+            <label class="before-required-star" for="email"
+              >Email<span class="sp__error-mess"></span
+            ></label>
+            <input
+              type="text"
+              class="inp__txt inp-req"
+              id="email"
+              name="email"
+              required
+            />
+          </li>
+          <li class="li__req">
+            <label class="before-required-star" for="subject"
+              >Subject<span class="sp__error-mess"></span
+            ></label>
+            <input
+              type="text"
+              class="inp__txt inp-req"
+              id="subject"
+              name="subject"
+              required
+            />
+          </li>
+          <li class="li__req">
+            <label class="before-required-star" for="message"
+              >Message<span class="sp__error-mess"></span
+            ></label>
+            <textarea
+              name="message"
+              class="textarea__mess inp-req"
+              id="message"
+              cols="30"
+              rows="10"
+              required
+            ></textarea>
+          </li>
+          <li>
+            <div class="wrapper__btn margintop10 wide100 centered">
+              <button
+                id="btn_submit"
+                class="base__btn btn-red btn-med-large wide80 centered"
+              >
+                Submit
+              </button>
+            </div>
+          </li>
+        </ul>
+      </form>
+    </div>
+  </section>
+</div>
+
+<script src="/static/js/validate.js"></script>
+<script>
+  const scrollToPage = (id) => {
+    var sectTop = document.getElementById(id);
+        sectTop = sectTop.offsetTop;
+
+    window.scrollTo({
+        top: sectTop,
+        left: 0,
+        behavior: 'smooth'
+    }),200};
+
+  const $page = "{{variation}}";
+
+  if ($page === "page2") {
+    scrollToPage('sectContact');
+  }
+</script>
+{% endblock %}

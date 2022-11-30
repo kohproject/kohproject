@@ -1,0 +1,14 @@
+
+
+<nav>
+    <h1><strong>kohproject</strong></h1>
+    <ol>
+        <li><a onclick="javascript:common.showPage('about')" href="javascript:void(0)"  
+            class="nav-item 
+            {% if request.path == '/about/page1' %}active{% endif %}" >About</a></li>
+        <li><a onclick="javascript:common.showPage('contact')" href="javascript:void(0)" 
+            class="nav-item 
+            {% if request.path == '/contact/page2' %}active{% endif %}">Contact</a></li>
+        <li><a href="#" id="link__nav-login" class="login-toggle">Login</a></li>
+    </ol>
+</nav>

@@ -1,0 +1,145 @@
+{% extends 'layout.html' %}
+{% block start %}
+{% load static %}
+<form method="post" id="form_modal">
+    {% csrf_token %}
+    <div class="container" id="container">
+        <section class="sect-main" id="sect_edit">
+            <div class="wrapper__full">
+                <h2 id="header_url" data-title="{{data.url}}">{{data.url}}</h2>
+                
+                <div class="flex flex-wrapper">
+                    <section class="sect__left">
+                        <ul>
+                            <li>
+                                <label>Gender:</label>
+                                <ol>
+                                    <li>
+                                    <label>Male</label>
+                                    <input type="radio" name="gender" value="male" class="inp-radio-gender"
+                                    {% if data.gender == 'male' %}checked{% endif %}/>
+                                    <li>
+                                    <li>
+                                        <label>Female</label>
+                                        <input type="radio" name="gender" value="female" class="inp-radio-gender"
+                                        {% if data.gender == 'female' %}checked{% endif %}/>
+                                    <li>
+                                </ol>
+                            </li>
+                            <li>
+                                <label>Profession:</label>
+                                <select class="sel-list"
+                                    data-type="sel-profession" 
+                                    id="sel_profession" name="profession">
+                                    <option value="null">--select--</option>
+                                    {% for profession in professions %}
+                                        <option value="{{profession}}"
+                                        {% if profession == data.profession %}selected="selected"{% endif %}>
+                                            {{profession}}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                            </li>
+                        
+                            <li>
+                                <label>Residence:</label>
+                                <select class="sel-list"
+                                        data-type="sel-nation" 
+                                        id="sel_nation" name="nation">
+                                    <option value="null">--select--</option>
+                                    {% for nation in nations %}
+                                        <option value="{{nation}}"
+                                        {% if nation == data.nation %}selected="selected"{% endif %}>
+                                            {{nation}}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                            </li>
+                            <li>
+                                <label>Ethnicity:</label>
+                            
+                                <select class="sel-list" 
+                                    data-type="sel-ethnic" 
+                                    id="sel_ethnic" name="ethnic">
+                                    <option value="null">--select--</option>
+                                    {% for ethnic in ethnics %}
+                                        <option value="{{ethnic}}"
+                                        {% if ethnic == data.ethnic %}selected{% endif %}>
+                                        {{ethnic}}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="sect__right" id="sect_right">
+                        <h3>Optional User Input</h3>
+                        <ul>
+                            <li id="li_notes" class="li-content">
+                                <dt><span class="sp__chx" class="chx" name="notes" id="chx_notes"></span>
+                                    <label for="notes"><a href="#" data-type="notes" class="link__content-accordian">Add Notes</a></label></dt>
+                                <dd class="dd-content" id="dd__notes">
+                                    <textarea id="textarea_notes" data-type="notes" class="inp-notes blur-change"></textarea>
+                                </dd>
+                            </li>
+                            <li id="li_social" class="li-content">
+                                <dt><span class="sp__chx" name="social" id="chx_social"></span>
+                                    <label for="social"><a href="#" data-type="social" class="link__content-accordian">Add Social Media Links</a></label></dt>
+                                <dd class="dd-content" id="dd__social">
+                                    <ol>
+                                        <li>
+                                            <label for="inp_facebook">facebook.com/</label>
+                                            <input value="" data-type="social" class="inp-social blur-change" name="inp_facebook"  id="inp_facebook"/>
+                                        </li>
+                                        <li>
+                                            <label for="inp_twitter" class="lab__twitter">twitter.com/</label>
+                                            <input value="" data-type="social" class="inp-social blur-change" name="inp_twitter" id="inp_twitter"/>
+                                        </li>
+                                        <li>
+                                            <label for="inp_instagram" class="lab__instagram">instagram.com/</label>
+                                            <input value="" data-type="social" class="inp-social blur-change" name="inp_instagram" id="inp_instagram"/>
+                                        </li>
+                                    </ol>
+                                </dd>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <hr/>
+                <div class="flex flex-wrapper space-between">
+                    <a class="link__close-edit" href="javascript:void(0)">close edit</a>
+                    <button id="btn_changes" class="btn btn-submit-changes">Submit Changes</button>
+                </div>
+            </div>
+            <a href="#" id="close_modal" class="close__modal"></a>
+        </section>
+
+    <script type="text/javascript">
+        const $ = ($) => document.getElementById($);
+        const $gender = "{{data.gender}}";
+        const $nation = "{{data.nation}}";
+        const $ethnic = "{{data.ethnic}}";
+        const $profession = "{{data.profession}}";
+        const textareaVal = $('textarea_notes').value;
+
+        const setChxActive = (el,bool) =>{
+            (bool) ? el.add('active') : el.remove('active')
+        }
+
+        let _bool = false;
+        document.querySelectorAll('.inp-social').forEach((itm) =>{
+            if(itm.value.length >0){
+                _bool = true;
+            }
+        });
+
+        setChxActive($('chx_notes').classList, (textareaVal.length > 0));
+        setChxActive($('chx_social').classList, _bool);
+        $('body').classList.add('loggedIn');
+
+    </script>
+    <script src="static/js/modal.js"></script>
+    </div>
+</form>
+
+{% endblock %}

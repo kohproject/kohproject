@@ -1,0 +1,47 @@
+<div class="header__nav-filter">
+    <ol>
+        <li>
+            <label>nation
+            <select class="sel-filter-list" id="nation" name="nation">
+                <option value=null>--select--</option>
+                {% for nation in nations %}
+            <option value="{{nation}}">{{nation}}</option>
+                {% endfor %}
+            </select>
+        </label>
+        </li>
+        <li>
+            <label>ethnicity</label>
+            <select class="sel-filter-list" id="ethnic" name="ethnic">
+                <option value=null>--select--</option>
+                {% for ethnic in ethnics %}
+                <option value="{{ethnic}}">{{ethnic}}</option>
+                {% endfor %}
+            </select>
+        </li>
+        <li>
+            <label>profession
+            <select class="sel-filter-list" id="profession" name="profession">
+                <option value=null>--select--</option>
+                {% for profession in professions %}
+                <option value="{{profession}}">{{profession}}</option>
+                {% endfor %}
+            </select>
+        </label>
+        </li>
+        <li>
+            <label>gender
+            <select class="sel-filter-list" id="gender" name="gender">
+                <option value=null>--select--</option>
+                <option value="1">male</option>
+                <option value="2">female</option>
+                <option value="3">other</option>
+            </select>
+        </label>
+        </li>
+        <li>
+            <button class="btn btn__filter" id="btn_filter-boxes">filter list</button>
+        </li>
+    </ol>
+</div>
+{% load static %}

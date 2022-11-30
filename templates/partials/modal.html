@@ -1,0 +1,166 @@
+<div class="modal modal__wrapper" id="modal">
+    <div class="modal-content">
+        <h2>www.sonnykoh.com</h2>
+        <div class="flex flex-wrapper">
+            <section class="sect__left">
+                <ul>
+                    <li>
+                        <label>Gender:</label>
+                        <ol>
+                            <li>
+                            <label>Male</label>
+                            <input type="radio" name="gender" value="male" checked />
+                            <li>
+                            <li>
+                                <label>Female</label>
+                                <input type="radio" name="gender" value="female" />
+                            <li>
+                        </ol>
+                    </li>
+                    <li>
+                        <label>Profession:</label>
+                        <select class="sel-list" data-type="set-profession" id="set_profession" name="profession">
+                            <option value="null">--select--</option>
+                            
+                            <option value="Artist">Artist</option>
+                            
+                            <option value="Engineer">Engineer</option>
+                            
+                            <option value="Designer">Designer</option>
+                            
+                            <option value="Software">Software</option>
+                            
+                            <option value="Teacher">Teacher</option>
+                            
+                            <option value="Professor">Professor</option>
+                            
+                            <option value="photographer">photographer</option>
+                            
+                            <option value="blogger">blogger</option>
+                            
+                            <option value="consultant">consultant</option>
+                            
+                            <option value="writer">writer</option>
+                            
+                            <option value="poet">poet</option>
+                            
+                            <option value="public speaker">public speaker</option>
+                            
+                            <option value="musican">musican</option>
+                            
+                            <option value="journalist">journalist</option>
+                            
+                            <option value="physician">physician</option>
+                            
+                            <option value="creative director">creative director</option>
+                            
+                            <option value="research / academics">research / academics</option>
+                            
+                            <option value="makeup artist">makeup artist</option>
+                            
+                            <option value="film maker">film maker</option>
+                            
+                            <option value="copywriter">copywriter</option>
+                            
+                            <option value="financial advisor">financial advisor</option>
+                            
+                            <option value="venture capitalist">venture capitalist</option>
+                            
+                            <option value="realestate">realestate</option>
+                            
+                          </select>
+                    </li>
+                   
+                    <li>
+                        <label>Residence:</label>
+                        <select class="sel-list" data-type="set-nation" id="set-nation" name="nation">
+                            <option value="null">--select--</option>
+                            
+                            <option value="Korea">Korea</option>
+                            
+                            <option value="USA">USA</option>
+                            
+                            <option value="Singapore">Singapore</option>
+                            
+                            <option value="Australia">Australia</option>
+                            
+                            <option value="Great Britain">Great Britain</option>
+                            
+                            <option value="Canada">Canada</option>
+                            
+                            <option value="Japan">Japan</option>
+                            
+                            <option value="Hongkong / China">Hongkong / China</option>
+                            
+                            <option value="Malaysia">Malaysia</option>
+                            
+                          </select>
+                    </li>
+                    <li>
+                        <label>Ethnicity:</label>
+                        <select class="sel-list" data-type="set-ethnic" id="set_ethnic" name="ethnic">
+                            <option value="null">--select--</option>
+                            
+                            <option value="Chinese">Chinese</option>
+                            
+                            <option value="Korean">Korean</option>
+                            
+                            <option value="Euro">Euro</option>
+                            
+                            <option value="Multi-ethnic">Multi-ethnic</option>
+                            
+                            <option value="Malay">Malay</option>
+                            
+                            <option value="Singapore/Chinese">Singapore/Chinese</option>
+                            
+                            <option value="Indonesian/Chinese">Indonesian/Chinese</option>
+                            
+                            <option value="Taiwanese/Chinese">Taiwanese/Chinese</option>
+                            
+                            <option value="Malay Chinese">Malay Chinese</option>
+                            
+                          </select>
+                    </li>
+                </ul>
+            </section>
+            <section class="sect__right" id="sect_right">
+                <h3>Optional User Input</h3>
+                <ul>
+                    <li id="li_notes" class="li-content">
+                        <dt><input type="checkbox" class="chx" name="notes" id="notes"/>
+                            <label for="notes"><a href="#" data-type="notes" class="link__content-accordian">Add Notes</a></label></dt>
+                        <dd class="dd-content" id="dd__notes">
+                            <textarea></textarea>
+                        </dd>
+                    </li>
+                    <li id="li_social" class="li-content">
+                        <dt><input type="checkbox" class="chx" name="social" id="social"/>
+                            <label for="social"><a href="#" data-type="social" class="link__content-accordian">Add Social Media Links</a></label></dt>
+                        <dd class="dd-content" id="dd__social">
+                            <ol>
+                                <li>
+                                    <label>facebook.com/</label>
+                                    <input value="" id="inp_facebook"/>
+                                </li>
+                                <li>
+                                    <label>twitter.com/</label>
+                                    <input value="" id="inp_twitter"/>
+                                </li>
+                                <li>
+                                    <label>instagram.com/</label>
+                                    <input value="" id="inp_instagram"/>
+                                </li>
+                            </ol>
+                        </dd>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <hr/>
+        <div class="flex flex-wrapper justify-end">
+            <button class="btn btn-submit-changes">Submit Changes</button>
+        </div>
+    </div>
+    <a href="#" id="close_modal" class="close__modal"></a>
+</div>
+<script type="text/javascript" src="/static/js/modal.js"></script>

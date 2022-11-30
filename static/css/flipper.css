@@ -1,0 +1,515 @@
+body {
+  margin: 0px;
+}
+
+body * {
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.cl {
+  clear: both;
+}
+
+.over {
+  overflow: hidden;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+ul, ol,
+ul > li,
+ol > li {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+.wide10 {
+  width: 9.99%;
+}
+
+.wide20 {
+  width: 19.99%;
+}
+
+.wide30 {
+  width: 29.99%;
+}
+
+.wide40 {
+  width: 39.99%;
+}
+
+.wide50 {
+  width: 49.99%;
+}
+
+.wide60 {
+  width: 59.99%;
+}
+
+.wide70 {
+  width: 69.99%;
+}
+
+.wide80 {
+  width: 79.99%;
+}
+
+.wide90 {
+  width: 89.99%;
+}
+
+.wide100 {
+  width: 100%;
+}
+
+/* flex start */
+ul, ol,
+.flex {
+  display: flex;
+}
+
+ul,
+.flex.col {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+ul > li.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+ol {
+  flex-direction: row;
+}
+
+.fx1 {
+  flex: 1;
+}
+
+.fx2 {
+  flex: 2;
+}
+
+.fx3 {
+  flex: 3;
+}
+
+.fx4 {
+  flex: 4;
+}
+
+.flex.center,
+.flex.col.center {
+  justify-content: center;
+  justify-items: center;
+}
+
+.flexaround {
+  justify-content: space-around;
+}
+
+.flexbetween {
+  justify-content: space-between;
+}
+
+.flexwrap {
+  flex-wrap: wrap;
+}
+
+/* flex end */
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: #000;
+  font-family: "Quicksand";
+}
+body * {
+  box-sizing: border-box;
+  font-family: "Quicksand";
+  background-repeat: no-repeat;
+}
+body:after {
+  content: "";
+  position: fixed;
+  width: 0%;
+  height: 0%;
+  display: inline;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: #000;
+  opacity: 0;
+  z-index: 99999;
+  transition: opacity 0.3s ease, border 0.3s ease-in;
+}
+
+.contain {
+  width: calc(100vw - 20px);
+  padding: 0px 0px 20px 20px;
+  position: absolute;
+  z-index: 1;
+  background: #1d1c01;
+}
+.contain main {
+  width: auto;
+  margin: 60px auto 0px auto;
+  z-index: 2;
+  background: transparent;
+  position: relative;
+  pointer-events: none;
+}
+
+.box {
+  min-width: 230px;
+  width: calc(25vw - 30px);
+  margin: 0px 18px 16px 0px;
+  z-index: 99;
+}
+
+@-webkit-keyframes spin {
+  100% {
+    transform: rotate(300deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(300deg);
+  }
+}
+@-webkit-keyframes spin2 {
+  100% {
+    transform: rotate(-300deg);
+  }
+}
+@keyframes spin2 {
+  100% {
+    transform: rotate(-300deg);
+  }
+}
+.box.box-grid {
+  position: relative;
+  height: 118px;
+  padding: 0px !important;
+  overflow: hidden !important;
+  background: #222;
+  transition: height 100ms ease;
+}
+.box.box-grid div {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+.box.box-grid a.link__blank {
+  display: block;
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  top: 60px;
+  left: 0px;
+  opacity: 0;
+  display: none;
+}
+.box.box-grid .flipper-second {
+  top: 0px;
+  height: 268px;
+  width: 100%;
+  transform-origin: top;
+  background: #fff;
+  perspective: 1500px;
+  transform: rotateX(-180deg);
+}
+.box.box-grid .full-flipper {
+  position: relative;
+  height: 118px;
+  perspective: 200px;
+  transform: rotateX(0deg);
+  transition: transform 0.2s ease;
+  width: 100%;
+  z-index: 0;
+}
+.box.box-grid .full-flipper .box-grid-inner {
+  background: #252809;
+  border: solid 4px rgb(57, 67, 5);
+  height: 118px;
+  width: 100%;
+  color: #fff;
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  transform: rotateX(0deg);
+  transform-origin: bottom;
+  transition: transform 0.2s ease-in;
+}
+.box.box-grid .full-flipper .box-grid-inner h5,
+.box.box-grid .full-flipper .box-grid-inner p {
+  position: absolute;
+  top: 12px;
+  left: 24px;
+  margin: 0px;
+  color: rgb(239, 255, 10);
+}
+.box.box-grid .full-flipper .box-grid-inner h5 {
+  font-size: 175%;
+}
+.box.box-grid .full-flipper .box-grid-inner p {
+  bottom: 12px;
+  left: 24px;
+  top: auto;
+}
+.box.box-grid .full-flipper .flipper {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  perspective: 200px;
+  height: 118px;
+  width: 100%;
+  transform: rotateX(-180deg);
+  z-index: 0;
+  transition: transform 0.4s ease-in-out;
+}
+.box.box-grid .full-flipper .flipper .block__head {
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  background: #e9c545;
+  transform: rotateX(0deg);
+  transition: transform 0.3s ease-in;
+  top: 118px;
+}
+.box.box-grid .full-flipper .flipper .block__head h4 {
+  position: absolute;
+  left: 120px;
+  top: 12px;
+  font-size: 175%;
+  margin: 0px;
+  color: #fff;
+}
+.box.box-grid .full-flipper .flipper .block__head > em {
+  display: block;
+  width: 74px;
+  height: 131px;
+  position: absolute;
+  left: 12px;
+  top: 12px;
+}
+.box.box-grid .full-flipper .flipper .block__head > em:before, .box.box-grid .full-flipper .flipper .block__head > em:after {
+  content: "";
+  display: block;
+  opacity: 0;
+  width: 90px;
+  height: 90px;
+  top: -9px;
+  left: -9px;
+  border-radius: 90px;
+  position: absolute;
+}
+.box.box-grid .full-flipper .flipper .block__head > em:before {
+  border: dashed 1px #f2dc62;
+}
+.box.box-grid .full-flipper .flipper .block__head > em:after {
+  width: 74px;
+  height: 74px;
+  background: #e9c545;
+  background: transparent;
+  border-radius: 74px;
+  overflow: hidden;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+.box.box-grid .full-flipper .flipper .block__head.head-bottom {
+  height: 57px;
+  width: 100%;
+  top: 0px;
+  background: #f2dc62;
+  transform: rotateX(-180deg);
+  perspective: 200px;
+  transform-origin: top;
+  z-index: 99;
+}
+.box.box-grid .full-flipper .flipper .block__head.head-bottom p {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  align-items: center;
+}
+.box.box-grid .full-flipper .flipper .block__head.head-bottom p a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 57px;
+  width: 100%;
+}
+.box.box-grid .full-flipper .flipper .block__head.head-bottom em {
+  top: -48px;
+}
+
+.box.box-grid.hold,
+.box.box-grid:hover {
+  box-shadow: 0px 1px 2px #222;
+  height: 386px;
+  background-color: #e9c545;
+  transition: height 0.2s ease-in, background-color 0.3s ease-in, transform 0.3s ease;
+}
+.box.box-grid.hold a.link__blank,
+.box.box-grid:hover a.link__blank {
+  display: block;
+}
+.box.box-grid.hold .flipper-second,
+.box.box-grid:hover .flipper-second {
+  transform: rotateX(0deg);
+  transition: all 1s ease-in;
+  top: 118px;
+  padding-top: 40px;
+}
+.box.box-grid.hold .flipper-second ul.flex,
+.box.box-grid:hover .flipper-second ul.flex {
+  border-top: dashed 1px #eee;
+}
+.box.box-grid.hold .flipper-second ul.flex > li,
+.box.box-grid:hover .flipper-second ul.flex > li {
+  padding-left: 100px;
+  border-bottom: dashed 1px #eee;
+  display: block;
+  position: relative;
+  height: 60px;
+  margin-bottom: 1px;
+}
+.box.box-grid.hold .flipper-second ul.flex > li > em,
+.box.box-grid:hover .flipper-second ul.flex > li > em {
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  left: 28px;
+  top: 12px;
+  background: #ddd;
+}
+.box.box-grid.hold .flipper-second ul.flex > li > em:before,
+.box.box-grid:hover .flipper-second ul.flex > li > em:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  left: -6.5px;
+  top: -6px;
+  border: solid 1px #990000;
+}
+.box.box-grid.hold .flipper-second ul.flex > li dt,
+.box.box-grid.hold .flipper-second ul.flex > li dd,
+.box.box-grid:hover .flipper-second ul.flex > li dt,
+.box.box-grid:hover .flipper-second ul.flex > li dd {
+  margin: 0px;
+  padding-top: 8px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  font-size: 90%;
+}
+.box.box-grid.hold .flipper-second ul.flex > li dd,
+.box.box-grid:hover .flipper-second ul.flex > li dd {
+  font-size: 140%;
+  padding-top: 4px;
+}
+.box.box-grid.hold .full-flipper,
+.box.box-grid:hover .full-flipper {
+  transform: rotateX(180deg);
+  perspective: 300px;
+  height: 118px;
+  transition: all 0.4s ease-in;
+  /*==========*/
+}
+.box.box-grid.hold .full-flipper .block__head,
+.box.box-grid:hover .full-flipper .block__head {
+  perspective: 100px;
+  top: 0px;
+}
+.box.box-grid.hold .full-flipper .block__head > em:before, .box.box-grid.hold .full-flipper .block__head > em:after,
+.box.box-grid:hover .full-flipper .block__head > em:before,
+.box.box-grid:hover .full-flipper .block__head > em:after {
+  opacity: 1;
+  transition: opacity 1s cubic-bezier(0, 1.01, 0, 1.01);
+  transition-delay: 0.4s;
+}
+.box.box-grid.hold .full-flipper .block__head.head-top > em:before,
+.box.box-grid:hover .full-flipper .block__head.head-top > em:before {
+  border-style: dashed;
+  transform: rotate(0deg);
+  -webkit-animation: spin 1s infinite;
+          animation: spin 1s infinite;
+}
+.box.box-grid.hold .full-flipper .block__head.head-bottom,
+.box.box-grid:hover .full-flipper .block__head.head-bottom {
+  transform: rotateX(0deg);
+  perspective: 400px;
+  transition-delay: 0.5s;
+  top: 60px;
+  transition: transform 0.8s ease-in;
+}
+.box.box-grid.hold .full-flipper .block__head.head-bottom em:before, .box.box-grid.hold .full-flipper .block__head.head-bottom em:after,
+.box.box-grid:hover .full-flipper .block__head.head-bottom em:before,
+.box.box-grid:hover .full-flipper .block__head.head-bottom em:after {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+.box.box-grid.hold .full-flipper .block__head.head-bottom em:before,
+.box.box-grid:hover .full-flipper .block__head.head-bottom em:before {
+  transform: rotate(0deg);
+  -webkit-animation: spin2 1s infinite;
+          animation: spin2 1s infinite;
+  border: dashed 1px #990000;
+}
+.box.box-grid.hold .full-flipper .block__head.head-bottom em:after,
+.box.box-grid:hover .full-flipper .block__head.head-bottom em:after {
+  background: #990000;
+  transition: background 0.1s ease;
+  transition-delay: 0.5s;
+}
+
+@-webkit-keyframes flip1 {
+  100% {
+    transform: rotateX(-180deg);
+  }
+}
+
+@keyframes flip1 {
+  100% {
+    transform: rotateX(-180deg);
+  }
+}
+.box.box-grid.active {
+  display: block;
+  pointer-events: auto;
+  height: 385px !important;
+  color: #fff;
+  position: relative;
+}/*# sourceMappingURL=flipper.css.map */

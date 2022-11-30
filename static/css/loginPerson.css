@@ -1,0 +1,243 @@
+input.chx, input.chx-toggle {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin-right: 5px;
+  overflow: visible;
+  outline: 0px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: solid 1px #ccc;
+}
+input.chx:checked, input.chx-toggle:checked {
+  background: green;
+  border: solid 1px green;
+  color: #fff;
+}
+input.chx:checked:before, input.chx:checked:after, input.chx-toggle:checked:before, input.chx-toggle:checked:after {
+  content: "";
+  width: 4px;
+  height: 15px;
+  background: #fff;
+  position: absolute;
+  display: block;
+  transform: rotate(44deg) translate3d(5px, -7px, 1px) scale(1.1);
+}
+input.chx:checked:before, input.chx-toggle:checked:before {
+  height: 9px;
+  transform: rotate(-42deg) translate3d(-4px, 5px, 1px);
+}
+
+.container-login {
+  width: 100%;
+  position: relative;
+  clear: both;
+  background: #fff;
+  min-height: calc(100vh - 50px);
+  overflow: hidden;
+  margin-top: 40px;
+}
+.container-login aside {
+  position: fixed;
+  color: #eee;
+  width: 230px;
+  background: #333;
+  height: 100vh;
+}
+.container-login aside .wrap__head {
+  width: 70px;
+  height: 70px;
+  margin: 20px auto;
+  outline: solid 5px #666;
+  border-radius: 90px;
+  border: dashed 1px #999;
+  background: #fff;
+}
+.container-login aside ul > li {
+  padding-left: 20px;
+  margin-bottom: 14px;
+}
+.container-login aside ul > li dt, .container-login aside ul > li dd {
+  margin: 0px;
+  color: #fff;
+}
+.container-login aside ul > li dt {
+  font-size: 12px;
+  color: #ccc;
+}
+.container-login main {
+  position: relative;
+  margin-left: 230px;
+}
+.container-login .contain {
+  background: #fff;
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  clear: both;
+  overflow: hidden;
+}
+.container-login .contain h3 {
+  margin: 0px;
+  font-size: 200%;
+  color: #333;
+}
+.container-login .contain .block .upload-wrap {
+  height: 200px;
+  display: flex;
+  min-width: 220px;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+  background: url("../imgs/uploadimg.png") no-repeat center bottom;
+  background-size: 40%;
+}
+.container-login .contain .block .upload-wrap:after {
+  content: "";
+  width: 130px;
+  height: 90px;
+  pointer-events: none;
+  border: solid 10px #f3f3f3;
+  transition: border 0.1s ease-in-out;
+  border-radius: 10px;
+  position: absolute;
+  top: 117px;
+  left: 35px;
+}
+.container-login .contain .block .upload-wrap:hover {
+  background-size: 41%;
+  cursor: pointer;
+}
+.container-login .contain .block .upload-wrap:hover:after {
+  border: solid 10px #ddd;
+}
+.container-login .contain .block .upload-wrap input[type=file] {
+  opacity: 0;
+  width: 120px;
+  height: 80px;
+}
+.container-login .contain ul > li {
+  line-height: 240%;
+}
+.container-login .contain ul > li .wrap__comments {
+  overflow: hidden;
+  clear: both;
+  position: relative;
+  padding: 20px 0px;
+}
+.container-login .contain ul > li .wrap__comments textarea {
+  min-width: 420px;
+  height: 100px;
+  width: 46%;
+}
+.container-login .contain ul > li .wrap__comments label {
+  width: 100%;
+  display: flex;
+  clear: both;
+  align-items: center;
+  justify-content: flex-start;
+}
+.container-login .contain ul > li select,
+.container-login .contain ul > li label {
+  width: 175px;
+  display: inline-block;
+}
+.container-login .contain ul > li select {
+  width: 200px;
+  height: 30px;
+  text-align: center;
+  border: solid 1px #999;
+}
+.container-login .contain ol {
+  margin-top: 20px;
+  clear: both;
+}
+.container-login .contain ol > li {
+  position: relative;
+  display: block;
+  width: auto;
+  margin-right: 20px;
+  min-width: 200px;
+  height: 55px;
+  clear: both;
+}
+.container-login .contain ol > li label {
+  display: flex;
+  height: 24px;
+  position: absolute;
+  top: 0px;
+}
+.container-login .contain ol > li label > input {
+  display: inline-block;
+  margin-right: 4px;
+}
+.container-login .contain ol > li div.inp-wrap {
+  width: 210px;
+  height: 40px;
+  border: solid 1px #999;
+  position: absolute;
+  top: 24px;
+  background-color: #fff;
+}
+.container-login .contain ol > li div.inp-wrap em {
+  width: 38px;
+  height: 37px;
+  display: block;
+  left: 1px;
+  top: 2px;
+  overflow: hidden;
+  transform: scale(0.75);
+  background-image: url("../imgs/sprite/social-icon__sprite.png");
+  background-repeat: no-repeat;
+  background-position: 0px -37px;
+}
+.container-login .contain ol > li div.inp-wrap > em.twitter {
+  background-position: 0px -37px;
+}
+.container-login .contain ol > li div.inp-wrap > em.facebook {
+  background-position: -38px -37px;
+}
+.container-login .contain ol > li div.inp-wrap > em.instagram {
+  background-position: -76px -37px;
+}
+.container-login .contain ol > li div.inp-wrap input[type=text] {
+  background-color: transparent;
+  outline: none;
+  display: block;
+  height: 30px;
+  width: 170px;
+  left: 40px;
+  border: 0px;
+  position: absolute;
+  top: 2px;
+}
+.container-login .contain ol > li div.inp-wrap.active input[type=text]:placeholder {
+  content: "";
+}
+.container-login .contain ol > li div.inp-wrap.active em.twitter {
+  background-position: 0px 0px;
+}
+.container-login .contain ol > li div.inp-wrap.active em.facebook {
+  background-position: -38px 0px;
+}
+.container-login .contain ol > li div.inp-wrap.active em.instagram {
+  background-position: -76px 0px;
+}
+.container-login .wrap__button {
+  overflow: hidden;
+  clear: both;
+  padding: 0px 0px 20px 0px;
+}
+.container-login .wrap__button > button {
+  border: 0px;
+  width: 250px;
+  height: 50px;
+  background: #990000;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 120%;
+}/*# sourceMappingURL=loginPerson.css.map */
